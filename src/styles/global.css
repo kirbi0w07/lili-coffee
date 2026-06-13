@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "aksara";
+  src: url("/public/fonts/AksaraAstral-Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rustic Delight";
+  src: url("/public/fonts/Rustic\ Delight.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roadster";
+  src: url("/public/fonts/ROADSTER.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Diary story";
+  src: url("/public/fonts/Diary\ Story.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-aksara: "aksara", sans-serif;
+  --font-rusticDelight: "Rustic Delight", sans-serif;
+  --font-roadster: "Roadster", sans-serif;
+  --font-diaryStory: "Diary story", sans-serif;
+}
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealUp 0.4s ease-out forwards;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+	transform: translateY(40px);
+	animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	will-change: transform, opacity;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.frappe-reveal {
+	opacity: 0;
+	animation: frappeReveal .8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes frappeReveal {
+	0% {
+		opacity: 0;
+		filter: blur(8px);
+		transform: translateY(30px) scale(.9);
+	}
+
+	70% {
+		opacity: 0;
+		filter: blur(8px);
+		transform: translateY(30px) scale(.9);
+	}
+
+	100% {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateY(0) scale(1.03);
+}
+
+}

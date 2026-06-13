@@ -1,8 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Frappe3D from "./Frappe3D.vue";
 
 ---
 
 <Layout>
-	<h1>Welcome to Lili Coffee</h1>
+	<header class="h-screen">
+		<div class="flex flex-col justify-between items-center min-h-full">
+			<h1 class="text-center pt-20">
+				<p class="fade-up font-roadster text-6xl " style="animation-delay: .3s;">SIEMPRE ES</p>
+				<p class="fade-up font-roadster text-6xl"
+				style="animation-delay: .5s;">BUEN MOMENTO</p>
+				<p class="fade-up font-diaryStory text-6xl" style="animation-delay: .8s;">{"<Para un>"}</p>
+				<p class="frappe-reveal font-rusticDelight  font-black text-6xl" style="animation-delay: 1s;">FRAPPE</p>
+			</h1>
+			
+				<img class="w-52 fade-up" style="animation-delay: 2.2s" src="/src/assets/chibi_recortada.png"/>
+		</div>
+	</header>
+	<main class="h-screen bg-purple-600">
+
+	</main>
 </Layout>
