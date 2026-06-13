@@ -33,53 +33,51 @@
   --font-diaryStory: "Diary story", sans-serif;
 }
 
+.delay1 { animation-delay: .3s; }
+.delay2 { animation-delay: .5s; }
+.delay3 { animation-delay: .8s; }
+.delay4 { animation-delay: 1s; }
+.delay5 { animation-delay: 2.2s; }
 
 .fade-up {
   opacity: 0;
-  transform: translateY(30px);
-  animation: revealUp 0.4s ease-out forwards;
+  transform: translate3d(0, 30px, 0);
+  will-change: transform, opacity;
+  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes revealUp {
   from {
     opacity: 0;
-	transform: translateY(40px);
-	animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-	will-change: transform, opacity;
+    transform: translate3d(0, 30px, 0);
   }
 
   to {
     opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .frappe-reveal {
-	opacity: 0;
-	animation: frappeReveal .8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+  transform: translate3d(0, 30px, 0) scale(.95);
+  will-change: transform, opacity;
+  animation: frappeReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes frappeReveal {
-	0% {
-		opacity: 0;
-		filter: blur(8px);
-		transform: translateY(30px) scale(.9);
-	}
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) scale(.95);
+  }
 
-	70% {
-		opacity: 0;
-		filter: blur(8px);
-		transform: translateY(30px) scale(.9);
-	}
+  60% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) scale(.95);
+  }
 
-	100% {
-	opacity: 1;
-	filter: blur(0);
-	transform: translateY(0) scale(1.03);
-}
-
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
